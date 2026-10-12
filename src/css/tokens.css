@@ -1,0 +1,164 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Design tokens — The Third Place
+   Sampled from the printed menu and interior photography.
+   Rationale for every value: design-system.md
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Fonts, self-hosted. No third-party request at runtime. ───────────────── */
+
+@font-face {
+  font-family: 'Jost';
+  src: url('../../assets/fonts/jost-var.woff2') format('woff2-variations');
+  font-weight: 300 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('../../assets/fonts/zillaslab-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('../../assets/fonts/zillaslab-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../../assets/fonts/plexmono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../../assets/fonts/plexmono-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── Colour ─────────────────────────────────────────────────────────────
+     Day surfaces                                                          */
+  --paper: #f4efe7;
+  --paper-warm: #eae1d3;
+  --paper-deep: #ded2c0;
+
+  --ink: #1a1714;
+  --ink-70: #4a443c;
+  /* Tuned against the WARMER of the two day surfaces (--paper-warm), not the
+     lighter one: 4.8:1 there, 5.3:1 on --paper. A value that only passed on
+     --paper would fail across the whole menu section. */
+  --ink-45: #676057;
+
+  /* Accent — the menu's red.
+     --vermilion is the brand red, used for fills and the mark, where it is a
+     background rather than text (white on it is 6.5:1).
+     --accent-ink is the same red taken two steps down so it clears 4.5:1 as
+     SMALL TEXT on both day surfaces. Eyebrows, labels and rules use it. */
+  --vermilion: #b8402c;
+  --vermilion-lo: #9a3222;
+  --accent-ink: #a83826;
+
+  /* The room                                                              */
+  --clay: #a8542c;
+  --ochre: #c08a3e;
+  --lacquer: #6e1a16;
+  --olive: #5a6049;
+
+  /* Night surfaces                                                        */
+  --night: #16110e;
+  --night-2: #241b16;
+  --paper-night: #efe4d6;
+  --night-70: #b9ab9c;
+  --night-45: #8c8073;
+
+  /* Per-tone aliases. Sections set these; components only read them,
+     which is what lets one component work on both tones.                  */
+  --surface: var(--paper);
+  --surface-2: var(--paper-warm);
+  --fg: var(--ink);
+  --fg-2: var(--ink-70);
+  --fg-3: var(--ink-45);
+  --rule: color-mix(in srgb, var(--ink) 14%, transparent);
+  --accent: var(--accent-ink);
+  --focus: var(--vermilion);
+
+  /* ── Type ───────────────────────────────────────────────────────────── */
+  --font-ui: 'Jost', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Zilla Slab', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+
+  --step--1: clamp(0.8rem, 0.77rem + 0.14vw, 0.88rem);
+  --step-0: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.11rem + 0.42vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.33rem + 0.84vw, 2rem);
+  --step-3: clamp(1.95rem, 1.63rem + 1.6vw, 2.9rem);
+  --step-4: clamp(2.5rem, 1.9rem + 3vw, 4.3rem);
+  --step-5: clamp(3.2rem, 1.9rem + 6.5vw, 7.5rem);
+
+  --measure: 68ch;
+  --measure-display: 34ch;
+  --track-wide: 0.22em;
+
+  /* ── Space ──────────────────────────────────────────────────────────── */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  --gutter: clamp(16px, 4vw, 32px);
+  --maxw: 1320px;
+  --header-h: 64px;
+
+  /* ── Motion ─────────────────────────────────────────────────────────── */
+  --dur-1: 140ms;
+  --dur-2: 320ms;
+  --dur-3: 620ms;
+  --dur-4: 900ms;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-sharp: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Elevation. Warm, low, never a grey drop shadow. ─────────────────── */
+  --shadow-1: 0 1px 2px rgb(26 23 20 / 0.06), 0 2px 8px rgb(26 23 20 / 0.04);
+  --shadow-2: 0 2px 6px rgb(26 23 20 / 0.08), 0 12px 32px rgb(26 23 20 / 0.1);
+
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+}
+
+/* ── Tone switching ──────────────────────────────────────────────────────── */
+
+[data-tone='night'] {
+  --surface: var(--night);
+  --surface-2: var(--night-2);
+  --fg: var(--paper-night);
+  --fg-2: var(--night-70);
+  --fg-3: var(--night-45);
+  --rule: color-mix(in srgb, var(--paper-night) 18%, transparent);
+  /* On night the menu red loses contrast, so the accent warms toward ochre
+     and the focus ring switches to paper so it is always visible.          */
+  --accent: #e06a4e;
+  --focus: var(--paper-night);
+}
+
+@media (min-width: 840px) {
+  :root {
+    --header-h: 76px;
+  }
+}

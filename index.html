@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>The Third Place — Coffee &amp; wine bar, Koregaon Park, Pune</title>
+<meta name="description" content="A coffee house by day and a dedicated wine bar by night, one floor up on Lane 5, Koregaon Park. Middle-Eastern, European and Modern Indian, wood-fired pizza, and a wine list that takes Indian wine seriously.">
+
+<meta name="theme-color" content="#F4EFE7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16110E" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+
+<!-- No canonical URL: the production domain is not known yet. Adding a guess
+     would be worse than omitting the tag. -->
+
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="The Third Place">
+<meta property="og:title" content="The Third Place — Koregaon Park, Pune">
+<meta property="og:description" content="Home. Work. And here. A coffee house by day and a dedicated wine bar by night, one floor up on Lane 5, Koregaon Park.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="assets/hero/room-day-1280.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="853">
+<meta property="og:image:alt" content="The daylit first-floor dining room at The Third Place, with shelves of ceramics, bentwood chairs and tall windows.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/favicon.svg">
+
+<link rel="stylesheet" href="src/css/tokens.css">
+<link rel="stylesheet" href="src/css/base.css">
+<link rel="stylesheet" href="src/css/components.css">
+<link rel="stylesheet" href="src/css/header.css">
+<link rel="stylesheet" href="src/css/hero.css">
+<link rel="stylesheet" href="src/css/sections.css">
+<link rel="stylesheet" href="src/css/reveal.css">
+
+<!-- Hero art is the LCP element; start it before the parser reaches it.
+     `imagesrcset`/`imagesizes` mirror the AVIF <source> exactly so the preload
+     scanner and layout resolve to the same candidate — verified cold at 1440w
+     and 640w as a single fetch, not a duplicate. -->
+<link rel="preload" as="image" type="image/avif" fetchpriority="high"
+      href="assets/hero/room-day-1536.avif"
+      imagesrcset="assets/hero/room-day-640.avif 640w, assets/hero/room-day-960.avif 960w, assets/hero/room-day-1280.avif 1280w, assets/hero/room-day-1536.avif 1536w"
+      imagesizes="100vw">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/zillaslab-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/jost-var.woff2" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "The Third Place",
+  "description": "A coffee house and dedicated wine bar in Koregaon Park, Pune, serving Middle-Eastern, European and Modern Indian dishes and wood-fired pizza.",
+  "image": "assets/hero/room-day-1280.jpg",
+  "servesCuisine": ["Middle Eastern", "European", "Modern Indian"],
+  "telephone": "+91-73979-99999",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1st Floor, Jewel Tower, 101, Lane Number 5, Ashok Chakra Society, Meera Nagar, Koregaon Park",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411001",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "15:00",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "12:00",
+      "closes": "23:30"
+    }
+  ],
+  "acceptsReservations": "https://www.district.in/dining/pune/the-third-place-koregaon-park",
+  "sameAs": ["https://www.instagram.com/thirdplaceinpune/"]
+}
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="header" data-stuck="false">
+  <div class="header__inner">
+    <a class="wordmark" href="#top" aria-label="The Third Place — back to top">
+      <svg class="mark" viewBox="0 0 122 56" fill="currentColor" aria-hidden="true" focusable="false" style="height:17px;width:37px">
+        <rect width="6" height="56"/><rect x="58" width="6" height="56"/><rect x="116" width="6" height="56"/>
+      </svg>
+      <span class="wordmark__text">The Third Place</span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#idea">The idea</a></li>
+        <li><a class="nav__link" href="#menu">Menu</a></li>
+        <li><a class="nav__link" href="#wine">Wine</a></li>
+        <li><a class="nav__link" href="#room">The room</a></li>
+        <li><a class="nav__link" href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--line" href="tel:+917397999999">Call</a>
+      <a class="btn btn--solid" href="https://www.district.in/dining/pune/the-third-place-koregaon-park" target="_blank" rel="noopener">Book a table</a>
+    </div>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-drawer" aria-label="Open menu">
+      <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="site-drawer" data-open="false">
+  <div aria-hidden="true"></div>
+  <div class="drawer__body">
+    <nav aria-label="Sections">
+      <ul class="drawer__list">
+        <li><a class="drawer__link" href="#idea"><span class="num">01</span> The idea</a></li>
+        <li><a class="drawer__link" href="#menu"><span class="num">02</span> Menu</a></li>
+        <li><a class="drawer__link" href="#counter"><span class="num">03</span> Coffee</a></li>
+        <li><a class="drawer__link" href="#wine"><span class="num">04</span> Wine</a></li>
+        <li><a class="drawer__link" href="#room"><span class="num">05</span> The room</a></li>
+        <li><a class="drawer__link" href="#visit"><span class="num">06</span> Visit</a></li>
+      </ul>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--solid" href="https://www.district.in/dining/pune/the-third-place-koregaon-park" target="_blank" rel="noopener">Book a table</a>
+      <a class="btn btn--line" href="tel:+917397999999">Call +91 73979 99999</a>
+      <p class="drawer__meta">
+        1st Floor, Jewel Tower, Lane 5<br>
+        Koregaon Park, Pune 411001
+      </p>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <!-- Static photograph: the LCP element, and the permanent fallback for
+           no-WebGL, reduced motion, or any failure in the slats module. -->
+      <picture class="hero__still">
+<source type="image/avif" srcset="assets/hero/room-day-640.avif 640w, assets/hero/room-day-960.avif 960w, assets/hero/room-day-1280.avif 1280w, assets/hero/room-day-1536.avif 1536w" sizes="100vw">
+<source type="image/webp" srcset="assets/hero/room-day-640.webp 640w, assets/hero/room-day-960.webp 960w, assets/hero/room-day-1280.webp 1280w, assets/hero/room-day-1536.webp 1536w" sizes="100vw">
+<img src="assets/hero/room-day-1280.jpg" srcset="assets/hero/room-day-640.jpg 640w, assets/hero/room-day-960.jpg 960w, assets/hero/room-day-1280.jpg 1280w, assets/hero/room-day-1536.jpg 1536w" sizes="100vw" width="1536" height="1024" alt="The first-floor dining room at The Third Place in daylight: a tall black steel shelf of ceramics and glassware behind a counter, round marble-topped tables with bentwood chairs, and potted plants against a wall of windows." fetchpriority="high" decoding="async">
+</picture>
+      <!-- The day face reuses the still image above — already decoded, so the
+           slats cost no extra bytes for it. Only the night face is fetched. -->
+      <canvas class="hero__canvas" aria-hidden="true"
+              data-night="assets/hero/room-evening-1280.webp"></canvas>
+      <div class="hero__scrim" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero__content">
+      <svg class="hero__mark" viewBox="0 0 122 56" fill="currentColor" aria-hidden="true" focusable="false" style="width:31px">
+        <rect width="6" height="56"/><rect x="58" width="6" height="56"/><rect x="116" width="6" height="56"/>
+      </svg>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="w">Home.</span>
+        <span class="w">Work.</span>
+        <span class="w">And <span class="hero__here">here</span>.</span>
+      </h1>
+
+      <p class="hero__sub">
+        A coffee house by day and a dedicated wine bar by night, one floor up
+        on Lane 5, Koregaon Park.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="https://www.district.in/dining/pune/the-third-place-koregaon-park" target="_blank" rel="noopener">Book a table</a>
+        <a class="btn btn--line" href="#menu">See the menu</a>
+      </div>
+    </div>
+
+    <div class="hero__meta">
+      <span class="hero__status" data-open="false">
+        <span class="hero__dot" aria-hidden="true"></span>
+        <span class="hero__status-label">Mon 3&thinsp;pm&ndash;11&thinsp;pm · Tue&ndash;Sun 12&thinsp;pm&ndash;11:30&thinsp;pm</span>
+      </span>
+      <span class="hero__where">Jewel Tower, Lane 5 · Koregaon Park</span>
+    </div>
+  </section>
+
+  <!-- ═══ 01 · THE IDEA ══════════════════════════════════════════════════ -->
+  <section class="section idea" id="idea" aria-labelledby="idea-title" data-tone="day">
+    <div class="shell">
+      <div class="idea__grid">
+
+        <div>
+          <p class="eyebrow" data-reveal>The idea</p>
+          <h2 id="idea-title" data-reveal="1">A room you don&rsquo;t need a reason to be in.</h2>
+
+          <figure class="idea__quote" style="margin-top:var(--s-7)" data-reveal="2">
+            <blockquote cite="https://www.restaurantindia.in/news/restaurant-india-news-how-the-third-place-is-blending-wine-coffee-and-lifestyle-retail-in">
+              &ldquo;Your first place is your home, second place is your work and
+              what we have here is your third place.&rdquo;
+            </blockquote>
+            <cite>Kunal Mhaske, founder</cite>
+          </figure>
+
+          <div class="idea__body" data-reveal="3">
+            <p>
+              The phrase is older than the restaurant. Sociologists use it for the
+              public rooms a neighbourhood keeps between home and work &mdash; the
+              ones you turn up to without an occasion, and leave having talked to
+              someone.
+            </p>
+            <p>
+              Koregaon Park got one in 2025. It holds a wood-fired oven, a
+              sommelier-led wine list, SOIL coffee, two small retail corners and a
+              shelf of books, on one floor above Lane 5.
+            </p>
+          </div>
+        </div>
+
+        <dl class="places" data-reveal="2">
+          <div class="places__row">
+            <dt class="places__n">01</dt>
+            <dd><strong>Home</strong><span>Where you sleep.</span></dd>
+          </div>
+          <div class="places__row">
+            <dt class="places__n">02</dt>
+            <dd><strong>Work</strong><span>Where you&rsquo;re needed.</span></dd>
+          </div>
+          <div class="places__row places__row--here">
+            <dt class="places__n">03</dt>
+            <dd><strong>Here</strong><span>Where you&rsquo;re neither.</span></dd>
+          </div>
+        </dl>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 02 · THE MENU ══════════════════════════════════════════════════ -->
+  <section class="section menu" id="menu" aria-labelledby="menu-title" data-tone="day">
+    <div class="shell">
+
+      <div class="menu__top">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>The menu</p>
+          <h2 id="menu-title" data-reveal="1">Simple things, done well.</h2>
+        </div>
+        <p class="lead" data-reveal="2">
+          Middle-Eastern, European and Modern Indian, from Chef Toshan
+          Salgaonkar &mdash; and Neapolitan pizza on a dough left to ferment
+          for seventy-two hours.
+        </p>
+      </div>
+
+      <div class="menu__panel">
+        <div>
+          <!-- Revealed by JS; with JS off the full list below stands on its own. -->
+          <div class="menu__tabs-wrap" hidden>
+            <div class="cats" id="menu-cats" role="tablist" aria-label="Menu categories"></div>
+          </div>
+
+          <p class="visually-hidden" id="menu-status" role="status" aria-live="polite"></p>
+
+          <div id="menu-panels">
+            <!-- No-JS fallback. Replaced wholesale by menu.js when it runs, so
+                 the two can never disagree. -->
+            <noscript>
+              <p class="menu__note" style="margin-bottom:var(--s-5)">
+                The full selection is on the printed menu &mdash;
+                <a href="https://www.zomato.com/pune/the-third-place-koregaon-park/menu" target="_blank" rel="noopener">view all 29 pages</a>.
+              </p>
+            </noscript>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <p class="menu-item__name"><span>Hummus Al Bayt</span></p>
+                <p class="menu-item__desc">Spiced chickpeas, zhug, Arabic pickle, warm pita</p>
+              </li>
+              <li class="menu-item">
+                <p class="menu-item__name"><span>Gojju Smashed Potatoes</span></p>
+                <p class="menu-item__desc">Crispy baby potatoes, caramelised onion glaze, sweet &amp; tangy tomato gojju</p>
+              </li>
+              <li class="menu-item">
+                <p class="menu-item__name"><span>Pinky Promise</span></p>
+                <p class="menu-item__desc">Spicy tomato cream, fresh mozzarella, confit garlic, basil, six pepper</p>
+              </li>
+              <li class="menu-item">
+                <p class="menu-item__name"><span>Rigatoni alla Norma</span></p>
+                <p class="menu-item__desc">Pomodoro, fresh basil, fried eggplant &amp; whipped ricotta</p>
+              </li>
+              <li class="menu-item">
+                <p class="menu-item__name"><span>Mutton Alni Risotto</span></p>
+                <p class="menu-item__desc">Creamy alni stock risotto, tender kala mutton, fresh coriander, mint</p>
+              </li>
+              <li class="menu-item">
+                <p class="menu-item__name"><span>Tiramisu</span></p>
+                <p class="menu-item__desc">Coffee-soaked layers &amp; mascarpone. Classic for a reason.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu__key">
+            <p class="menu__key-label">The menu&rsquo;s own key</p>
+            <span class="tag">dairy</span>
+            <span class="tag">gluten</span>
+            <span class="tag">nuts</span>
+            <span class="tag">shellfish</span>
+            <span class="tag tag--nonveg">non-veg</span>
+          </div>
+        </div>
+
+        <aside class="menu__aside" aria-label="About this menu">
+          <figure class="fig" data-reveal>
+            <div class="fig__frame ar-4x5" style="--lqip:url('data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoUABIAPxmEulYsqCWjqAgBkCMJZAB4/gHi7qnp8fVpWB7kBTMxWUZmAMol/nls+JfpPQ5spNSRSztLaQ6JaMSGj3448sgTIOzS4sOaGY3bJPAKE9KYzC/0cU2seHoOeswfaGijSPwZ634oEtlgWV2XIdCPw0fOLgdTkCAgZwG04okLjlgKHNZY87UU40ybNoiC+bwBfksCTQC0kMegAA==');--focus:42% center">
+<picture>
+<source type="image/avif" srcset="assets/food/pizza-480.avif 480w, assets/food/pizza-768.avif 768w, assets/food/pizza-1100.avif 1100w, assets/food/pizza-1169.avif 1169w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 90vw">
+<source type="image/webp" srcset="assets/food/pizza-480.webp 480w, assets/food/pizza-768.webp 768w, assets/food/pizza-1100.webp 1100w, assets/food/pizza-1169.webp 1169w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 90vw">
+<img src="assets/food/pizza-1100.jpg" srcset="assets/food/pizza-480.jpg 480w, assets/food/pizza-768.jpg 768w, assets/food/pizza-1100.jpg 1100w, assets/food/pizza-1169.jpg 1169w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 90vw" width="1169" height="1077" alt="A wood-fired pizza with a blistered, leopard-spotted crust, scattered with fresh herbs and sliced onion, served with two small bowls of green and chilli-oil dips." loading="lazy" decoding="async">
+</picture>
+</div>
+            <figcaption>
+              Neapolitan-style, wood-fired, on a 72-hour slow-fermented dough.
+            </figcaption>
+          </figure>
+
+          <p class="menu__note">
+            A selection, not the whole list. The printed menu runs to
+            twenty-nine pages &mdash; food, bar and beverages.
+          </p>
+
+          <a class="btn btn--line" href="https://www.zomato.com/pune/the-third-place-koregaon-park/menu" target="_blank" rel="noopener">
+            See the full menu
+          </a>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ 03 · THE COUNTER ═══════════════════════════════════════════════ -->
+  <section class="section counter" id="counter" aria-labelledby="counter-title" data-tone="day">
+    <div class="counter__band">
+      <div class="counter__inner">
+        <figure class="fig counter__img">
+          <div class="fig__frame" style="--lqip:url('data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoUAAsAPxl0slCspqSisAgBkCMJbACdMoADf1Iu9ZfmuQlrfCgA4cxQhrMA4ddN+RT+vhsM/JLmq6cC3Otj5Ige93m850aLxav2F9iNUKwUlE4gdIUiPUj4yeCQEmNM446fbrGJGef0Zc3xIAA=');--focus:center 62%">
+<picture>
+<source type="image/avif" srcset="assets/details/room-plants-480.avif 480w, assets/details/room-plants-768.avif 768w, assets/details/room-plants-1100.avif 1100w" sizes="100vw">
+<source type="image/webp" srcset="assets/details/room-plants-480.webp 480w, assets/details/room-plants-768.webp 768w, assets/details/room-plants-1100.webp 1100w" sizes="100vw">
+<img src="assets/details/room-plants-1100.jpg" srcset="assets/details/room-plants-480.jpg 480w, assets/details/room-plants-768.jpg 768w, assets/details/room-plants-1100.jpg 1100w" sizes="100vw" width="1280" height="720" alt="The dining room in warm daylight: marble-topped café tables and bentwood chairs, indoor trees, and a backlit shelf of ceramics along the far wall beneath exposed ducting." loading="lazy" decoding="async">
+</picture>
+</div>
+        </figure>
+        <div class="counter__card" data-reveal>
+          <p class="eyebrow">The counter</p>
+          <h2 id="counter-title">Coffee first.</h2>
+          <p class="lead" style="font-size:var(--step-0);max-width:40ch">
+            The room opens at noon as a coffee house. SOIL Coffee on the
+            machine, slow-brewed, and no hurry about the table.
+          </p>
+          <ul class="counter__list">
+            <li>Pour over</li>
+            <li>French press</li>
+            <li>Cortado</li>
+            <li>Piccolo</li>
+            <li>Coffee jelly latte</li>
+            <li>Masala chai latte</li>
+            <li>Irish coffee</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 04 · THE WINE BAR — the night pivot ════════════════════════════ -->
+  <section class="section wine" id="wine" aria-labelledby="wine-title" data-tone="night">
+    <div class="shell">
+      <div class="wine__grid">
+
+        <div class="wine__figs" data-reveal>
+          <figure class="fig">
+            <div class="fig__frame" style="--lqip:url('data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAACQBgCdASoUACQAPxmGslSsqaQjKrgKAZAjCWwAnTLHBykxaswCjTHilk/Smfk1hNeJmn90xhZPAz+6xieYAM43umjVzNrZ37nN/EpyfimgjmTti9kcZT2+SO47uQTQAwad8LaHwbVwjsYIJoBQR9AekKsC6qIekySfXe/9xesh8W4nJ3V+3G5WauAgJ08TE8UwglOpTXdOZEG4llRZzbOLoN/cPLWmC/hEBafO2+vy2yLNVdh40yp3Y8S/XzGMRlhMV9gSyYnIvIVOMEaY0G+WdBgkZc0giDQvqGc09LPFw2YZy8cimdrXSugg9YSrgAA=');--focus:center 32%">
+<picture>
+<source type="image/avif" srcset="assets/interior/bar-bottles-480.avif 480w, assets/interior/bar-bottles-720.avif 720w" sizes="(min-width:900px) 24vw, 50vw">
+<source type="image/webp" srcset="assets/interior/bar-bottles-480.webp 480w, assets/interior/bar-bottles-720.webp 720w" sizes="(min-width:900px) 24vw, 50vw">
+<img src="assets/interior/bar-bottles-720.jpg" srcset="assets/interior/bar-bottles-480.jpg 480w, assets/interior/bar-bottles-720.jpg 720w" sizes="(min-width:900px) 24vw, 50vw" width="720" height="1280" alt="The bar at The Third Place: shelves of wine bottles against a deep red backlit wall, with rows of wine glasses resting upside down along the counter edge." loading="lazy" decoding="async">
+</picture>
+</div>
+          </figure>
+          <figure class="fig">
+            <div class="fig__frame ar-1x1" style="--lqip:url('data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAQBgCdASoUACQAPxmGtVasqKSjpWsxkCMJaACpJ6HEhk3OlhXf4fkEGUXj6sDAxMHne/UT9VL6o2AA/suTJjun/jZxUeFlYrHAWQeSXrild7feRzN4KAQ8C0MzwznkAuoSPBEYGp7C7Iw9V/JgKbV8twrNEhCoXFxoEYTV1SLBVGV5tvcM4TBDQn94JMWyFSQ+8DJYSq3/p9HChZxIQY+duyOJIXeC708gZA6IvL0PRmoGCXjg415olpxx2AsFDuhbCytHvOQhCYU4qbSIBkJAAAA=');--focus:center 72%">
+<picture>
+<source type="image/avif" srcset="assets/interior/window-night-480.avif 480w, assets/interior/window-night-720.avif 720w" sizes="(min-width:900px) 22vw, 50vw">
+<source type="image/webp" srcset="assets/interior/window-night-480.webp 480w, assets/interior/window-night-720.webp 720w" sizes="(min-width:900px) 22vw, 50vw">
+<img src="assets/interior/window-night-720.jpg" srcset="assets/interior/window-night-480.jpg 480w, assets/interior/window-night-720.jpg 720w" sizes="(min-width:900px) 22vw, 50vw" width="720" height="1280" alt="Banquette seating beside floor-to-ceiling steel-framed windows at night, lit by small cordless brass table lamps, with trees visible outside." loading="lazy" decoding="async">
+</picture>
+</div>
+          </figure>
+          <figure class="fig">
+            <div class="fig__frame ar-1x1" style="--lqip:url('data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoUAAsAPxl0slCspqSisAgBkCMJbACdMoR3BtAB3Z6ieIdwndYAAPqIvO3UlCTdcXR89IFz4k5vtwCczsL/aq3Cq+NYVdC9bf0z6M2G+gtxe5ZyvxEidgz++YbgY9COBS0Ho++rFvwRe3Vwk7LZKwAA');--focus:center 50%">
+<picture>
+<source type="image/avif" srcset="assets/interior/wine-racks-480.avif 480w, assets/interior/wine-racks-768.avif 768w, assets/interior/wine-racks-1100.avif 1100w, assets/interior/wine-racks-1280.avif 1280w" sizes="(min-width:900px) 22vw, 50vw">
+<source type="image/webp" srcset="assets/interior/wine-racks-480.webp 480w, assets/interior/wine-racks-768.webp 768w, assets/interior/wine-racks-1100.webp 1100w, assets/interior/wine-racks-1280.webp 1280w" sizes="(min-width:900px) 22vw, 50vw">
+<img src="assets/interior/wine-racks-1100.jpg" srcset="assets/interior/wine-racks-480.jpg 480w, assets/interior/wine-racks-768.jpg 768w, assets/interior/wine-racks-1100.jpg 1100w, assets/interior/wine-racks-1280.jpg 1280w" sizes="(min-width:900px) 22vw, 50vw" width="1280" height="720" alt="A tall black wine rack filled with bottles dividing the room, with the bar and café seating beyond it." loading="lazy" decoding="async">
+</picture>
+</div>
+          </figure>
+        </div>
+
+        <div>
+          <p class="eyebrow" data-reveal>The wine bar</p>
+          <h2 id="wine-title" data-reveal="1">Local legends, and the other kind.</h2>
+
+          <p class="lead" data-reveal="2">
+            Reported at its opening in 2025 as Pune&rsquo;s first dedicated wine
+            bar. The list is sommelier-led and pours by the glass, the carafe and
+            the bottle.
+          </p>
+
+          <figure class="wine__quote" data-reveal="3">
+            &ldquo;A little love for the premium local wines from Nandi Hills,
+            Nashik, Solapur, and Akluj.&rdquo;
+            <cite>From the wine list</cite>
+          </figure>
+
+          <dl class="regions" data-reveal="3">
+            <div class="regions__item"><dt>Nandi Hills</dt><dd>Karnataka</dd></div>
+            <div class="regions__item"><dt>Nashik</dt><dd>Maharashtra</dd></div>
+            <div class="regions__item"><dt>Solapur</dt><dd>Maharashtra</dd></div>
+            <div class="regions__item"><dt>Akluj</dt><dd>Maharashtra</dd></div>
+          </dl>
+
+          <p style="margin-top:var(--s-6);color:var(--night-70);max-width:52ch" data-reveal="4">
+            Indian bottles are not a token section here &mdash; they have their own
+            page, with their own tasting notes, and they sit on the same list as
+            Chablis, Bordeaux and a Super Tuscan.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 05 · THE ROOM ══════════════════════════════════════════════════ -->
+  <section class="section room" id="room" aria-labelledby="room-title" data-tone="night">
+    <div class="shell">
+
+      <div class="room__head section-head">
+        <p class="eyebrow" data-reveal>The room</p>
+        <h2 id="room-title" data-reveal="1">Built partly from things that were already here.</h2>
+        <p class="lead" data-reveal="2">
+          Designed with stylist Kajal Patel around daylight, greenery, refurbished
+          furniture and recycled materials &mdash; private corners at one end,
+          communal counters at the other.
+        </p>
+      </div>
+
+      <div class="room__grid">
+        <figure class="fig" data-reveal="1">
+          <div class="fig__frame ar-3x2" style="--lqip:url('data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoUAA8APxl0slEspqSisAgBkCMJZACw7B07O0uU98kSiX5pzeJAAPnY7uQCF70EDi1QY/7qZUIHsIvD1glvI7DcHESnfJsqsWsKu5ZL4VC14fjWo72G3Z5wWIIGN1oiLyuyV0nVfQAAAA==');--focus:center 52%">
+<picture>
+<source type="image/avif" srcset="assets/interior/room-windows-480.avif 480w, assets/interior/room-windows-768.avif 768w, assets/interior/room-windows-1100.avif 1100w, assets/interior/room-windows-1280.avif 1280w" sizes="(min-width:840px) 56vw, 50vw">
+<source type="image/webp" srcset="assets/interior/room-windows-480.webp 480w, assets/interior/room-windows-768.webp 768w, assets/interior/room-windows-1100.webp 1100w, assets/interior/room-windows-1280.webp 1280w" sizes="(min-width:840px) 56vw, 50vw">
+<img src="assets/interior/room-windows-1100.jpg" srcset="assets/interior/room-windows-480.jpg 480w, assets/interior/room-windows-768.jpg 768w, assets/interior/room-windows-1100.jpg 1100w, assets/interior/room-windows-1280.jpg 1280w" sizes="(min-width:840px) 56vw, 50vw" width="1280" height="960" alt="A corner of the dining room with curved pale banquettes, round tables, large indoor plants and daylight coming through tall windows." loading="lazy" decoding="async">
+</picture>
+</div>
+        </figure>
+        <figure class="fig" data-reveal="2">
+          <div class="fig__frame ar-4x5" style="--lqip:url('data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBgCdASoUACQAPxmAtVSsqCSjKrgKAZAjCWYArDOYQ0MKuEbcnkB1kyGG8PefAjisW2Dye/TyfgAA/r2SuDyiYv+tJrGT1LWdlQx74gCIIKSnVxO9gT7RZKv99paogIVDnIZIX0Jn/JLo1BeOf8lpXDC7HIhlUXNuBoqPyIcW5uXLnpFcfRnZeRlHjQoOm4AGGEnwB0/SpZuOU6xHwOjW9JQteU1k95NJnKmKGT3RtkWcM/VSxM/wAAA=');--focus:center 50%">
+<picture>
+<source type="image/avif" srcset="assets/interior/communal-table-480.avif 480w, assets/interior/communal-table-720.avif 720w" sizes="(min-width:840px) 40vw, 50vw">
+<source type="image/webp" srcset="assets/interior/communal-table-480.webp 480w, assets/interior/communal-table-720.webp 720w" sizes="(min-width:840px) 40vw, 50vw">
+<img src="assets/interior/communal-table-720.jpg" srcset="assets/interior/communal-table-480.jpg 480w, assets/interior/communal-table-720.jpg 720w" sizes="(min-width:840px) 40vw, 50vw" width="720" height="1280" alt="A long pale oak communal table with chairs along both sides, set against an ochre clay wall with a framed mirror and a warm floor lamp." loading="lazy" decoding="async">
+</picture>
+</div>
+        </figure>
+        <figure class="fig" data-reveal="1">
+          <div class="fig__frame ar-4x5" style="--lqip:url('data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAABQBgCdASoUACQAPxl8sVKsp6QiqqwBkCMJaACsOUFRviYAeDdq037QD8wSK87BbjPftx40rUYJFSBBAAD+uaNn43A/25MgA/tieoczVav9npXgWaJWwny3Dp4jRkH3D1mvlNr5HlK0x1BD8B43PQmNVjdTevT5cQkJNNzqbqIS7mdX384J/JxDn0lwC4JeqsYKWOffpIOxbsLs1hXLvvLwVy2gKSZUcA/r3CNOEfO/lT8RK8VAgGrWIcBmLu2lEtjZKKMXWVuYwTYT6f2Cl8MMNQ+NEqOz7YbmiyeGHsmkAAAA');--focus:center 45%">
+<picture>
+<source type="image/avif" srcset="assets/interior/shelves-ceramics-480.avif 480w, assets/interior/shelves-ceramics-720.avif 720w" sizes="(min-width:840px) 32vw, 50vw">
+<source type="image/webp" srcset="assets/interior/shelves-ceramics-480.webp 480w, assets/interior/shelves-ceramics-720.webp 720w" sizes="(min-width:840px) 32vw, 50vw">
+<img src="assets/interior/shelves-ceramics-720.jpg" srcset="assets/interior/shelves-ceramics-480.jpg 480w, assets/interior/shelves-ceramics-720.jpg 720w" sizes="(min-width:840px) 32vw, 50vw" width="720" height="1280" alt="Open black steel shelving stacked with earthenware pots, ceramics and woven baskets, beside a long wooden table and steel-framed glazing." loading="lazy" decoding="async">
+</picture>
+</div>
+        </figure>
+        <figure class="fig" data-reveal="2">
+          <div class="fig__frame ar-4x5" style="--lqip:url('data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoUAA8APxl0sVCspqSisAgBkCMJZACdMoACRQpqGZIvKT/sF4EAAPpypF+KQ5NNc5A3zm5SZYptZKNvcLjfgWJQoXS01eQq7b75cYdrDEidpt5aYBd9KrEVY2nyIv7C9qzh5dfqI+eqXD4k1l+r86uVt/laubQJgAA=');--focus:center 55%">
+<picture>
+<source type="image/avif" srcset="assets/interior/bar-terrazzo-480.avif 480w, assets/interior/bar-terrazzo-768.avif 768w, assets/interior/bar-terrazzo-1100.avif 1100w, assets/interior/bar-terrazzo-1280.avif 1280w" sizes="(min-width:840px) 32vw, 50vw">
+<source type="image/webp" srcset="assets/interior/bar-terrazzo-480.webp 480w, assets/interior/bar-terrazzo-768.webp 768w, assets/interior/bar-terrazzo-1100.webp 1100w, assets/interior/bar-terrazzo-1280.webp 1280w" sizes="(min-width:840px) 32vw, 50vw">
+<img src="assets/interior/bar-terrazzo-1100.jpg" srcset="assets/interior/bar-terrazzo-480.jpg 480w, assets/interior/bar-terrazzo-768.jpg 768w, assets/interior/bar-terrazzo-1100.jpg 1100w, assets/interior/bar-terrazzo-1280.jpg 1280w" sizes="(min-width:840px) 32vw, 50vw" width="1280" height="960" alt="The red-lit bar counter seen across a terrazzo floor, with bentwood chairs, marble café tables and a wine rack along the wall." loading="lazy" decoding="async">
+</picture>
+</div>
+        </figure>
+        <figure class="fig" data-reveal="3">
+          <div class="fig__frame ar-4x5" style="--lqip:url('data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASoUAB4APxl+sVQsqCQjKA1RkCMJQBbZCLrxEY8LkPjHE4xRvi7sXEMtpmS8AAD+2mCK44VQHIj1Xa8PTZceydEPyqtpgHc5b8SoPnKYp8M5vG/G7FOim1ZkNy2Nqy4f0DyjJltJYI16IN4NDdX8kHy6yXUvOwgB3vGItAlp8rYQ+Dvt4BoTdZ4cHNmP4yRF03EUCRgxTEPLeUv6rfmUAAAA');--focus:center 45%">
+<picture>
+<source type="image/avif" srcset="assets/food/greens-480.avif 480w, assets/food/greens-768.avif 768w, assets/food/greens-1100.avif 1100w, assets/food/greens-1500.avif 1500w" sizes="(min-width:840px) 32vw, 50vw">
+<source type="image/webp" srcset="assets/food/greens-480.webp 480w, assets/food/greens-768.webp 768w, assets/food/greens-1100.webp 1100w, assets/food/greens-1500.webp 1500w" sizes="(min-width:840px) 32vw, 50vw">
+<img src="assets/food/greens-1100.jpg" srcset="assets/food/greens-480.jpg 480w, assets/food/greens-768.jpg 768w, assets/food/greens-1100.jpg 1100w, assets/food/greens-1500.jpg 1500w" sizes="(min-width:840px) 32vw, 50vw" width="2832" height="4240" alt="Charred asparagus and broccolini piled over a smoky red sauce in a wide white bowl, scattered with sliced sausage." loading="lazy" decoding="async">
+</picture>
+</div>
+        </figure>
+      </div>
+
+      <div class="room__facts">
+        <div class="room__fact" data-reveal="1">
+          <h3>Daylight</h3>
+          <p>Steel-framed glazing down one side, indoor trees, and terrazzo that
+             takes the afternoon well.</p>
+        </div>
+        <div class="room__fact" data-reveal="2">
+          <h3>Things to take home</h3>
+          <p>Two retail corners share the floor &mdash; Altrove by Shreya Mantri
+             and Style Mati by Fatima K.&nbsp;Punjabi.</p>
+        </div>
+        <div class="room__fact" data-reveal="3">
+          <h3>Books</h3>
+          <p>There are books on the shelves, and nobody minds how long you stay
+             with one.</p>
+        </div>
+        <div class="room__fact" data-reveal="4">
+          <h3>Where it is</h3>
+          <p>First floor of Jewel Tower, opposite Godrej Nature&rsquo;s Basket on
+             Lane&nbsp;5.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ 06 · VISIT ═════════════════════════════════════════════════════ -->
+  <section class="section visit" id="visit" aria-labelledby="visit-title" data-tone="day">
+    <div class="shell">
+
+      <div class="section-head" style="margin-bottom:var(--s-8)">
+        <p class="eyebrow" data-reveal>Visit</p>
+        <h2 id="visit-title" data-reveal="1">One floor up, Lane 5.</h2>
+      </div>
+
+      <div class="visit__grid">
+        <div data-reveal>
+
+          <div class="visit__block">
+            <p class="visit__label">Address</p>
+            <address class="visit__address">
+              1st Floor, Jewel Tower, 101<br>
+              Lane Number 5, Ashok Chakra Society<br>
+              Meera Nagar, Koregaon Park<br>
+              Pune 411001
+            </address>
+            <div class="btn-row" style="margin-top:var(--s-5)">
+              <a class="btn btn--line" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Third%20Place%2C%201st%20Floor%2C%20Jewel%20Tower%2C%20101%2C%20Lane%20Number%205%2C%20Meera%20Nagar%2C%20Koregaon%20Park%2C%20Pune%20411001" target="_blank" rel="noopener">Get directions</a>
+            </div>
+          </div>
+
+          <div class="visit__block">
+            <p class="visit__label">Hours</p>
+            <dl class="hours">
+              <div class="hours__row" data-day="1">
+                <dt>Monday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>3&thinsp;pm &ndash; 11&thinsp;pm</dd>
+              </div>
+              <div class="hours__row" data-day="2">
+                <dt>Tuesday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>12&thinsp;pm &ndash; 11:30&thinsp;pm</dd>
+              </div>
+              <div class="hours__row" data-day="3">
+                <dt>Wednesday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>12&thinsp;pm &ndash; 11:30&thinsp;pm</dd>
+              </div>
+              <div class="hours__row" data-day="4">
+                <dt>Thursday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>12&thinsp;pm &ndash; 11:30&thinsp;pm</dd>
+              </div>
+              <div class="hours__row" data-day="5">
+                <dt>Friday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>12&thinsp;pm &ndash; 11:30&thinsp;pm</dd>
+              </div>
+              <div class="hours__row" data-day="6">
+                <dt>Saturday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>12&thinsp;pm &ndash; 11:30&thinsp;pm</dd>
+              </div>
+              <div class="hours__row" data-day="0">
+                <dt>Sunday<span class="hours__today" hidden> &mdash; today</span></dt>
+                <dd>12&thinsp;pm &ndash; 11:30&thinsp;pm</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="visit__block">
+            <p class="visit__label">Get in touch</p>
+            <div class="visit__contact">
+              <a href="tel:+917397999999">+91 73979 99999</a>
+              <a href="https://www.instagram.com/thirdplaceinpune/" target="_blank" rel="noopener">@thirdplaceinpune on Instagram</a>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn--solid" href="https://www.district.in/dining/pune/the-third-place-koregaon-park" target="_blank" rel="noopener">Book a table on District</a>
+            </div>
+            <p style="margin-top:var(--s-4);font-family:var(--font-mono);font-size:var(--step--1);color:var(--ink-45);max-width:40ch">
+              Bookings are handled by District. The button opens their page in a
+              new tab.
+            </p>
+          </div>
+
+        </div>
+
+        <div data-reveal="1">
+          <figure class="fig visit__map">
+            <div class="fig__frame ar-4x5" style="--lqip:url('data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoUAA8APxl0sVCspqSisAgBkCMJQBOgAuyzrj3gH0E1hAAA3cWu7VotPxh75QygINVAb4+sJtpaxKPEBkNzJTCyhyHFCZ6FoQbqpdcY/wLPwonIj7mGFapdNUZXSEMjT3ubKOCG+U3AAuk8AAA=');--focus:center 58%">
+<picture>
+<source type="image/avif" srcset="assets/interior/shelves-wide-480.avif 480w, assets/interior/shelves-wide-768.avif 768w, assets/interior/shelves-wide-1100.avif 1100w, assets/interior/shelves-wide-1280.avif 1280w" sizes="(min-width:900px) 46vw, 90vw">
+<source type="image/webp" srcset="assets/interior/shelves-wide-480.webp 480w, assets/interior/shelves-wide-768.webp 768w, assets/interior/shelves-wide-1100.webp 1100w, assets/interior/shelves-wide-1280.webp 1280w" sizes="(min-width:900px) 46vw, 90vw">
+<img src="assets/interior/shelves-wide-1100.jpg" srcset="assets/interior/shelves-wide-480.jpg 480w, assets/interior/shelves-wide-768.jpg 768w, assets/interior/shelves-wide-1100.jpg 1100w, assets/interior/shelves-wide-1280.jpg 1280w" sizes="(min-width:900px) 46vw, 90vw" width="1280" height="960" alt="A full wall of open shelving holding plates, ceramics and candles, with plants, bentwood chairs and a wooden counter in the foreground." loading="lazy" decoding="async">
+</picture>
+</div>
+            <figcaption>
+              Look for Jewel Tower on Lane&nbsp;5, opposite Godrej Nature&rsquo;s
+              Basket, and take the stairs to the first floor.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell">
+
+    <div class="footer__top">
+      <div class="footer__brand">
+        <svg class="mark" viewBox="0 0 122 56" fill="currentColor" aria-hidden="true" focusable="false" style="height:22px;width:48px">
+          <rect width="6" height="56"/><rect x="58" width="6" height="56"/><rect x="116" width="6" height="56"/>
+        </svg>
+        <p>
+          A coffee house by day and a wine bar by night, one floor up on Lane 5,
+          Koregaon Park, Pune.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h2>Sections</h2>
+        <ul class="footer__list">
+          <li><a href="#idea">The idea</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#counter">Coffee</a></li>
+          <li><a href="#wine">Wine</a></li>
+          <li><a href="#room">The room</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2>Elsewhere</h2>
+        <ul class="footer__list">
+          <li><a href="https://www.instagram.com/thirdplaceinpune/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.district.in/dining/pune/the-third-place-koregaon-park" target="_blank" rel="noopener">Book on District</a></li>
+          <li><a href="https://www.zomato.com/pune/the-third-place-koregaon-park/menu" target="_blank" rel="noopener">Full menu</a></li>
+          <li><a href="tel:+917397999999">+91 73979 99999</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Third%20Place%2C%201st%20Floor%2C%20Jewel%20Tower%2C%20101%2C%20Lane%20Number%205%2C%20Meera%20Nagar%2C%20Koregaon%20Park%2C%20Pune%20411001" target="_blank" rel="noopener">Directions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__disclaimer">
+        <strong style="color:var(--night-70);font-weight:500">Speculative design concept.</strong>
+        This is an unofficial website proposal for The Third Place, produced
+        independently and not commissioned, reviewed or endorsed by the
+        restaurant. Business details were compiled from public listings in
+        October 2026 and should be confirmed before use. Photography is the
+        restaurant&rsquo;s own, published on its public listings, and remains its
+        copyright.
+      </p>
+      <p>&copy; The Third Place</p>
+    </div>
+
+  </div>
+</footer>
+
+<div class="actionbar" data-shown="false">
+  <a class="btn btn--line" href="tel:+917397999999">Call</a>
+  <a class="btn btn--solid" href="https://www.district.in/dining/pune/the-third-place-koregaon-park" target="_blank" rel="noopener">Book</a>
+</div>
+
+<script type="module" src="src/js/main.js?b=mv4rhokj"></script>
+</body>
+</html>

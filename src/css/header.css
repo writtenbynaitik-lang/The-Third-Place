@@ -1,0 +1,329 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Header + navigation
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: background-color var(--dur-2) var(--ease-sharp),
+    border-color var(--dur-2) var(--ease-sharp);
+  border-bottom: 1px solid transparent;
+}
+
+/* Over the hero photograph the bar is transparent and text is light; a soft
+   scrim keeps the wordmark and nav legible on any part of the image. */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(12 8 6 / 0.55), rgb(12 8 6 / 0));
+  opacity: 1;
+  transition: opacity var(--dur-2) var(--ease-sharp);
+  pointer-events: none;
+}
+
+.header[data-stuck='true'] {
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--paper-deep);
+}
+
+.header[data-stuck='true']::before {
+  opacity: 0;
+}
+
+.header__inner {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Wordmark ────────────────────────────────────────────────────────────── */
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  /* 44px of touch target without 44px of visible logo. */
+  min-height: 44px;
+  padding-right: var(--s-2);
+  margin-left: calc(var(--s-2) * -1);
+  padding-left: var(--s-2);
+  text-decoration: none;
+  color: var(--paper);
+  transition: color var(--dur-2) var(--ease-sharp);
+}
+
+.header[data-stuck='true'] .wordmark {
+  color: var(--ink);
+}
+
+.wordmark .mark {
+  height: 15px;
+  color: var(--vermilion);
+}
+
+.header:not([data-stuck='true']) .wordmark .mark {
+  color: #f0b8a8;
+}
+
+.wordmark__text {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (min-width: 480px) {
+  .wordmark .mark { height: 17px; }
+  .wordmark__text { font-size: 0.9rem; }
+}
+
+/* ── Desktop nav ─────────────────────────────────────────────────────────── */
+
+.nav {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--paper) 82%, transparent);
+  padding-block: var(--s-2);
+  transition: color var(--dur-1) var(--ease-sharp);
+}
+
+.header[data-stuck='true'] .nav__link {
+  color: var(--ink-70);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--vermilion);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+.nav__link:hover,
+.header[data-stuck='true'] .nav__link:hover {
+  color: var(--vermilion);
+}
+
+.nav__link:hover::after,
+.nav__link[aria-current='true']::after {
+  transform: scaleX(1);
+}
+
+.nav__link[aria-current='true'] {
+  color: var(--vermilion);
+}
+
+.header__actions {
+  display: none;
+  align-items: center;
+  gap: var(--s-3);
+}
+
+@media (min-width: 840px) {
+  .nav,
+  .header__actions {
+    display: flex;
+  }
+
+  .header:not([data-stuck='true']) .btn--line {
+    color: var(--paper);
+    border-color: color-mix(in srgb, var(--paper) 45%, transparent);
+  }
+}
+
+/* ── Menu toggle ─────────────────────────────────────────────────────────── */
+
+.menu-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: calc(var(--s-3) * -1);
+  color: var(--paper);
+  transition: color var(--dur-2) var(--ease-sharp);
+}
+
+.header[data-stuck='true'] .menu-toggle {
+  color: var(--ink);
+}
+
+.menu-toggle__bars {
+  position: relative;
+  width: 22px;
+  height: 12px;
+}
+
+.menu-toggle__bars span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform var(--dur-2) var(--ease-out),
+    opacity var(--dur-1) var(--ease-sharp);
+}
+
+.menu-toggle__bars span:nth-child(1) { top: 0; }
+.menu-toggle__bars span:nth-child(2) { top: 5px; }
+.menu-toggle__bars span:nth-child(3) { top: 10px; }
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded='true'] .menu-toggle__bars span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+@media (min-width: 840px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* ── Mobile drawer ───────────────────────────────────────────────────────── */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: grid;
+  grid-template-rows: var(--header-h) 1fr;
+  background: var(--paper);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-sharp),
+    visibility 0s linear var(--dur-2);
+}
+
+.drawer[data-open='true'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--dur-2) var(--ease-sharp), visibility 0s;
+}
+
+.drawer__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s-7);
+  padding: var(--s-6) var(--gutter) calc(var(--s-8) + env(safe-area-inset-bottom));
+  overflow-y: auto;
+}
+
+.drawer__list {
+  display: grid;
+  gap: var(--s-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drawer__link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding-block: var(--s-4);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+
+.drawer__link .num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--accent-ink);
+}
+
+.drawer__foot {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.drawer__meta {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: var(--ink-45);
+}
+
+@media (min-width: 840px) {
+  .drawer {
+    display: none;
+  }
+}
+
+/* Keep the page from scrolling behind the open drawer. */
+body[data-drawer-open='true'] {
+  overflow: hidden;
+}
+
+/* ── Header while the drawer is open ─────────────────────────────────────────
+   The header sits above the drawer, so at scroll-0 it would keep its
+   light-on-photograph treatment — a pale wordmark and a dark scrim smudge
+   over the drawer's cream surface. Pin it to the drawer's own palette.      */
+
+body[data-drawer-open='true'] .header::before {
+  opacity: 0;
+}
+
+body[data-drawer-open='true'] .header {
+  background: var(--paper);
+  border-bottom-color: transparent;
+}
+
+body[data-drawer-open='true'] .wordmark,
+body[data-drawer-open='true'] .menu-toggle {
+  color: var(--ink);
+}
+
+body[data-drawer-open='true'] .wordmark .mark {
+  color: var(--vermilion);
+}

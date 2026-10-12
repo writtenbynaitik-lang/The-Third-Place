@@ -1,0 +1,18 @@
+{
+  "name": "the-third-place",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Speculative website concept for The Third Place, Koregaon Park, Pune.",
+  "type": "module",
+  "scripts": {
+    "images": "node tools/images.js",
+    "build": "node tools/build.js",
+    "dev": "node tools/build.js --dev && node tools/serve.js . 5180",
+    "preview": "node tools/serve.js dist 5181",
+    "start": "npm run build && npm run preview"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "sharp": "^0.34.0"
+  }
+}

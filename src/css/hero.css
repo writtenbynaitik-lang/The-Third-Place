@@ -1,0 +1,356 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Hero
+   Layered, in paint order:
+     1. .hero__still   static <picture> — the LCP element and the permanent
+                       fallback for no-WebGL / reduced-motion / failure
+     2. .hero__canvas  WebGL slats, faded in only once a frame has rendered
+     3. .hero__scrim   legibility gradient
+     4. .hero__content headline and actions — never gated on 1–3
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* `min-height`, not `height`. On a short screen — a 568px-tall phone, or any
+   landscape handset — a fixed 100svh forces the headline up underneath the
+   fixed header. Letting the hero grow past the viewport instead costs nothing
+   and keeps every line clear of the chrome. */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  background: #241b16;
+  color: var(--paper);
+  isolation: isolate;
+}
+
+@media (min-height: 1200px) {
+  .hero {
+    min-height: 1100px;
+  }
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero__still,
+.hero__still img,
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__still img {
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.hero__canvas {
+  opacity: 0;
+  transition: opacity 700ms var(--ease-out);
+}
+
+/* Set by JS only after the first frame actually renders, so a failed init can
+   never leave a blank canvas over the photograph. */
+.hero__canvas[data-ready='true'] {
+  opacity: 1;
+}
+
+/* Vertical only by default. On a phone the headline spans the full width, so a
+   left-to-right wash would darken the whole photograph instead of just the
+   type's bed — the room stops reading as a room. The horizontal pass is added
+   back at desktop, where the text occupies the left third. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(12 8 6 / 0.74) 0%,
+    rgb(12 8 6 / 0.46) 32%,
+    rgb(12 8 6 / 0.16) 64%,
+    rgb(12 8 6 / 0.08) 82%,
+    rgb(12 8 6 / 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+@media (min-width: 840px) {
+  .hero__scrim {
+    background:
+      linear-gradient(to top, rgb(12 8 6 / 0.8) 0%, rgb(12 8 6 / 0.34) 42%, rgb(12 8 6 / 0.1) 70%, rgb(12 8 6 / 0.4) 100%),
+      linear-gradient(to right, rgb(12 8 6 / 0.52) 0%, rgb(12 8 6 / 0) 58%);
+  }
+}
+
+/* ── Content ─────────────────────────────────────────────────────────────── */
+
+.hero__content {
+  align-self: end;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  /* Top padding is the header's clearance, so the first line can never slide
+     under the bar however short the viewport is. */
+  padding: calc(var(--header-h) + var(--s-5)) var(--gutter) var(--s-7);
+  position: relative;
+  /* Insurance. The scrim handles the usual case, but the slats can turn a
+     bright window into the area behind a given line of type; a wide, soft
+     shadow keeps contrast without reading as a drop shadow. */
+  text-shadow: 0 2px 30px rgb(12 8 6 / 0.72), 0 1px 4px rgb(12 8 6 / 0.45);
+}
+
+/* Buttons sit on their own fill and must not inherit it. */
+.hero__content .btn {
+  text-shadow: none;
+}
+
+@media (min-width: 840px) {
+  .hero__content {
+    padding-bottom: var(--s-8);
+  }
+}
+
+.hero__mark {
+  height: 14px;
+  color: #f0b8a8;
+  margin-bottom: var(--s-5);
+}
+
+.hero__mark rect {
+  opacity: 0;
+  animation: markIn 520ms var(--ease-out) forwards;
+}
+.hero__mark rect:nth-child(1) { animation-delay: 120ms; }
+.hero__mark rect:nth-child(2) { animation-delay: 260ms; }
+.hero__mark rect:nth-child(3) { animation-delay: 400ms; }
+
+@keyframes markIn {
+  from { opacity: 0; transform: translateY(18%) scaleY(0.4); }
+  to   { opacity: 1; transform: none; }
+}
+
+.hero__title {
+  display: grid;
+  font-size: var(--step-5);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--paper);
+  margin: 0;
+  max-width: 16ch;
+}
+
+.hero__title .w {
+  display: block;
+  opacity: 0;
+  transform: translateY(0.22em);
+  animation: wordIn 760ms var(--ease-out) forwards;
+}
+
+.hero__title .w:nth-child(1) { animation-delay: 220ms; }
+.hero__title .w:nth-child(2) { animation-delay: 360ms; }
+.hero__title .w:nth-child(3) { animation-delay: 500ms; }
+
+@keyframes wordIn {
+  to { opacity: 1; transform: none; }
+}
+
+/* The underline is drawn under "here" after the third line lands — the only
+   piece of decoration in the hero, and it points at the word that matters. */
+.hero__here {
+  position: relative;
+  white-space: nowrap;
+}
+
+.hero__here::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.055em;
+  background: var(--vermilion);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: ruleIn 620ms var(--ease-out) 980ms forwards;
+}
+
+@keyframes ruleIn {
+  to { transform: scaleX(1); }
+}
+
+.hero__sub {
+  margin-top: var(--s-5);
+  max-width: 42ch;
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--paper) 88%, transparent);
+  opacity: 0;
+  animation: wordIn 760ms var(--ease-out) 660ms forwards;
+}
+
+.hero__actions {
+  margin-top: var(--s-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  opacity: 0;
+  animation: wordIn 760ms var(--ease-out) 800ms forwards;
+}
+
+.hero__actions .btn--line {
+  color: var(--paper);
+  border-color: color-mix(in srgb, var(--paper) 50%, transparent);
+}
+
+.hero__actions .btn--line:hover {
+  border-color: var(--paper);
+  background: rgb(255 255 255 / 0.1);
+}
+
+/* ── Footer strip: live status, location, and the turn control ───────────── */
+
+.hero__meta {
+  position: relative;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: var(--s-4) var(--gutter) calc(var(--s-4) + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+  border-top: 1px solid rgb(255 255 255 / 0.16);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, var(--paper) 78%, transparent);
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.hero__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-45);
+  flex: none;
+}
+
+.hero__status[data-open='true'] .hero__dot {
+  background: #7fb069;
+  box-shadow: 0 0 0 3px rgb(127 176 105 / 0.22);
+}
+
+.hero__status[data-open='false'] .hero__dot {
+  background: var(--vermilion);
+  box-shadow: 0 0 0 3px rgb(184 64 44 / 0.22);
+}
+
+.hero__where {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hero__where {
+    display: inline;
+  }
+}
+
+/* Pause/resume for the hero's continuous drift. Only inserted by JS when the
+   WebGL scene is actually running, so there is never a dead control. */
+.hero__turn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  padding-inline: var(--s-3);
+  margin-right: calc(var(--s-3) * -1);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--paper) 78%, transparent);
+  transition: color var(--dur-1) var(--ease-sharp);
+}
+
+.hero__turn:hover {
+  color: var(--paper);
+}
+
+.hero__turn-icon {
+  width: 9px;
+  height: 11px;
+  background: currentColor;
+  -webkit-mask: var(--icon-pause) center / contain no-repeat;
+  mask: var(--icon-pause) center / contain no-repeat;
+}
+
+.hero__turn[aria-pressed='true'] .hero__turn-icon {
+  -webkit-mask-image: var(--icon-play);
+  mask-image: var(--icon-play);
+}
+
+:root {
+  --icon-pause: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 11'%3E%3Crect width='3' height='11'/%3E%3Crect x='6' width='3' height='11'/%3E%3C/svg%3E");
+  --icon-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 11'%3E%3Cpath d='M0 0l9 5.5L0 11z'/%3E%3C/svg%3E");
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────────
+   Force every hero element to its final state. Because the entrance uses
+   `animation … forwards` from opacity:0, a global duration collapse alone
+   could leave content invisible if animations are suppressed entirely.      */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__mark rect,
+  .hero__title .w,
+  .hero__sub,
+  .hero__actions {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero__here::after {
+    transform: scaleX(1);
+    animation: none;
+  }
+}
+
+/* ── Short viewports (landscape phones, small laptops) ───────────────────────
+   The display scale is tuned to width, which on a 360px-tall landscape screen
+   produces a three-line headline taller than the whole viewport. Tie the hero
+   type to height here instead, so the headline, the sub and both actions stay
+   reachable without a long scroll.                                          */
+
+@media (max-height: 580px) and (min-width: 600px) {
+  .hero__title {
+    font-size: clamp(2rem, 11vh, 3.6rem);
+  }
+
+  .hero__sub {
+    font-size: var(--step-0);
+    margin-top: var(--s-4);
+  }
+
+  .hero__mark {
+    height: 11px;
+    margin-bottom: var(--s-3);
+  }
+
+  .hero__actions {
+    margin-top: var(--s-4);
+  }
+
+  .hero__content {
+    padding-top: calc(var(--header-h) + var(--s-3));
+    padding-bottom: var(--s-5);
+  }
+}

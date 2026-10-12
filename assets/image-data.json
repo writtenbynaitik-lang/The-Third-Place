@@ -1,0 +1,292 @@
+{
+  "hero-room-day": {
+    "base": "hero/room-day",
+    "widths": [
+      640,
+      960,
+      1280,
+      1536
+    ],
+    "width": 1536,
+    "height": 1024,
+    "ratio": 1.5,
+    "alt": "The first-floor dining room at The Third Place in daylight: a tall black steel shelf of ceramics and glassware behind a counter, round marble-topped tables with bentwood chairs, and potted plants against a wall of windows.",
+    "decorative": false,
+    "focus": "center 55%",
+    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQAwCdASoUAA0APxl0slEspqSisAgBkCMJbACdMoACwnH2GW2TekgA/F8AerN1bvDWEyYHllG2+EutbIZWiAwXXfTeDx+6wChb2O3UfUtTLLUSRYP1hE0MLLJ2z/0/HjI480uO5+epIf6xKiVL+HrmWOmPtEQ2kGxjj4KUGbB3tpZAAAA="
+  },
+  "hero-room-evening": {
+    "base": "hero/room-evening",
+    "widths": [
+      640,
+      960,
+      1280
+    ],
+    "width": 1280,
+    "height": 720,
+    "ratio": 1.7778,
+    "alt": "The dining room at The Third Place in the evening, with warm light glowing beneath a curved counter, high tables and bentwood chairs under an exposed concrete ceiling.",
+    "decorative": false,
+    "focus": "center 55%",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQAwCdASoUAAsAPxl0slEspqSisAgBkCMJbACdABe9NL86MhiV6hQAyzfNYad4AZBvuNKgLZg4xI/54Az3CrEhEyWDmoOKmlQw3U3KA/Ob2d1QJD1PktKf0zI5HCvGIxPBfdLYUMGCmd1DB+UPzoAA"
+  },
+  "bar-bottles": {
+    "base": "interior/bar-bottles",
+    "widths": [
+      480,
+      720
+    ],
+    "width": 720,
+    "height": 1280,
+    "ratio": 0.5625,
+    "alt": "The bar at The Third Place: shelves of wine bottles against a deep red backlit wall, with rows of wine glasses resting upside down along the counter edge.",
+    "decorative": false,
+    "focus": "center 32%",
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAACQBgCdASoUACQAPxmGslSsqaQjKrgKAZAjCWwAnTLHBykxaswCjTHilk/Smfk1hNeJmn90xhZPAz+6xieYAM43umjVzNrZ37nN/EpyfimgjmTti9kcZT2+SO47uQTQAwad8LaHwbVwjsYIJoBQR9AekKsC6qIekySfXe/9xesh8W4nJ3V+3G5WauAgJ08TE8UwglOpTXdOZEG4llRZzbOLoN/cPLWmC/hEBafO2+vy2yLNVdh40yp3Y8S/XzGMRlhMV9gSyYnIvIVOMEaY0G+WdBgkZc0giDQvqGc09LPFw2YZy8cimdrXSugg9YSrgAA="
+  },
+  "window-night": {
+    "base": "interior/window-night",
+    "widths": [
+      480,
+      720
+    ],
+    "width": 720,
+    "height": 1280,
+    "ratio": 0.5625,
+    "alt": "Banquette seating beside floor-to-ceiling steel-framed windows at night, lit by small cordless brass table lamps, with trees visible outside.",
+    "decorative": false,
+    "focus": "center 72%",
+    "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAQBgCdASoUACQAPxmGtVasqKSjpWsxkCMJaACpJ6HEhk3OlhXf4fkEGUXj6sDAxMHne/UT9VL6o2AA/suTJjun/jZxUeFlYrHAWQeSXrild7feRzN4KAQ8C0MzwznkAuoSPBEYGp7C7Iw9V/JgKbV8twrNEhCoXFxoEYTV1SLBVGV5tvcM4TBDQn94JMWyFSQ+8DJYSq3/p9HChZxIQY+duyOJIXeC708gZA6IvL0PRmoGCXjg415olpxx2AsFDuhbCytHvOQhCYU4qbSIBkJAAAA="
+  },
+  "shelves-ceramics": {
+    "base": "interior/shelves-ceramics",
+    "widths": [
+      480,
+      720
+    ],
+    "width": 720,
+    "height": 1280,
+    "ratio": 0.5625,
+    "alt": "Open black steel shelving stacked with earthenware pots, ceramics and woven baskets, beside a long wooden table and steel-framed glazing.",
+    "decorative": false,
+    "focus": "center 45%",
+    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAABQBgCdASoUACQAPxl8sVKsp6QiqqwBkCMJaACsOUFRviYAeDdq037QD8wSK87BbjPftx40rUYJFSBBAAD+uaNn43A/25MgA/tieoczVav9npXgWaJWwny3Dp4jRkH3D1mvlNr5HlK0x1BD8B43PQmNVjdTevT5cQkJNNzqbqIS7mdX384J/JxDn0lwC4JeqsYKWOffpIOxbsLs1hXLvvLwVy2gKSZUcA/r3CNOEfO/lT8RK8VAgGrWIcBmLu2lEtjZKKMXWVuYwTYT6f2Cl8MMNQ+NEqOz7YbmiyeGHsmkAAAA"
+  },
+  "shelves-wide": {
+    "base": "interior/shelves-wide",
+    "widths": [
+      480,
+      768,
+      1100,
+      1280
+    ],
+    "width": 1280,
+    "height": 960,
+    "ratio": 1.3333,
+    "alt": "A full wall of open shelving holding plates, ceramics and candles, with plants, bentwood chairs and a wooden counter in the foreground.",
+    "decorative": false,
+    "focus": "center 58%",
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoUAA8APxl0sVCspqSisAgBkCMJQBOgAuyzrj3gH0E1hAAA3cWu7VotPxh75QygINVAb4+sJtpaxKPEBkNzJTCyhyHFCZ6FoQbqpdcY/wLPwonIj7mGFapdNUZXSEMjT3ubKOCG+U3AAuk8AAA="
+  },
+  "room-windows": {
+    "base": "interior/room-windows",
+    "widths": [
+      480,
+      768,
+      1100,
+      1280
+    ],
+    "width": 1280,
+    "height": 960,
+    "ratio": 1.3333,
+    "alt": "A corner of the dining room with curved pale banquettes, round tables, large indoor plants and daylight coming through tall windows.",
+    "decorative": false,
+    "focus": "center 52%",
+    "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoUAA8APxl0slEspqSisAgBkCMJZACw7B07O0uU98kSiX5pzeJAAPnY7uQCF70EDi1QY/7qZUIHsIvD1glvI7DcHESnfJsqsWsKu5ZL4VC14fjWo72G3Z5wWIIGN1oiLyuyV0nVfQAAAA=="
+  },
+  "bar-terrazzo": {
+    "base": "interior/bar-terrazzo",
+    "widths": [
+      480,
+      768,
+      1100,
+      1280
+    ],
+    "width": 1280,
+    "height": 960,
+    "ratio": 1.3333,
+    "alt": "The red-lit bar counter seen across a terrazzo floor, with bentwood chairs, marble café tables and a wine rack along the wall.",
+    "decorative": false,
+    "focus": "center 55%",
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoUAA8APxl0sVCspqSisAgBkCMJZACdMoACRQpqGZIvKT/sF4EAAPpypF+KQ5NNc5A3zm5SZYptZKNvcLjfgWJQoXS01eQq7b75cYdrDEidpt5aYBd9KrEVY2nyIv7C9qzh5dfqI+eqXD4k1l+r86uVt/laubQJgAA="
+  },
+  "wine-racks": {
+    "base": "interior/wine-racks",
+    "widths": [
+      480,
+      768,
+      1100,
+      1280
+    ],
+    "width": 1280,
+    "height": 720,
+    "ratio": 1.7778,
+    "alt": "A tall black wine rack filled with bottles dividing the room, with the bar and café seating beyond it.",
+    "decorative": false,
+    "focus": "center 50%",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoUAAsAPxl0slCspqSisAgBkCMJbACdMoR3BtAB3Z6ieIdwndYAAPqIvO3UlCTdcXR89IFz4k5vtwCczsL/aq3Cq+NYVdC9bf0z6M2G+gtxe5ZyvxEidgz++YbgY9COBS0Ho++rFvwRe3Vwk7LZKwAA"
+  },
+  "communal-table": {
+    "base": "interior/communal-table",
+    "widths": [
+      480,
+      720
+    ],
+    "width": 720,
+    "height": 1280,
+    "ratio": 0.5625,
+    "alt": "A long pale oak communal table with chairs along both sides, set against an ochre clay wall with a framed mirror and a warm floor lamp.",
+    "decorative": false,
+    "focus": "center 50%",
+    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBgCdASoUACQAPxmAtVSsqCSjKrgKAZAjCWYArDOYQ0MKuEbcnkB1kyGG8PefAjisW2Dye/TyfgAA/r2SuDyiYv+tJrGT1LWdlQx74gCIIKSnVxO9gT7RZKv99paogIVDnIZIX0Jn/JLo1BeOf8lpXDC7HIhlUXNuBoqPyIcW5uXLnpFcfRnZeRlHjQoOm4AGGEnwB0/SpZuOU6xHwOjW9JQteU1k95NJnKmKGT3RtkWcM/VSxM/wAAA="
+  },
+  "pizza": {
+    "base": "food/pizza",
+    "widths": [
+      480,
+      768,
+      1100,
+      1169
+    ],
+    "width": 1169,
+    "height": 1077,
+    "ratio": 1.0854,
+    "alt": "A wood-fired pizza with a blistered, leopard-spotted crust, scattered with fresh herbs and sliced onion, served with two small bowls of green and chilli-oil dips.",
+    "decorative": false,
+    "focus": "42% center",
+    "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoUABIAPxmEulYsqCWjqAgBkCMJZAB4/gHi7qnp8fVpWB7kBTMxWUZmAMol/nls+JfpPQ5spNSRSztLaQ6JaMSGj3448sgTIOzS4sOaGY3bJPAKE9KYzC/0cU2seHoOeswfaGijSPwZ634oEtlgWV2XIdCPw0fOLgdTkCAgZwG04okLjlgKHNZY87UU40ybNoiC+bwBfksCTQC0kMegAA=="
+  },
+  "rigatoni": {
+    "base": "food/rigatoni",
+    "widths": [
+      480,
+      768,
+      1100,
+      1280
+    ],
+    "width": 1280,
+    "height": 1006,
+    "ratio": 1.2724,
+    "alt": "A plate of rigatoni in a rich tomato sauce, finished with soft white cheese and basil leaves, served on a fluted glass plate.",
+    "decorative": false,
+    "focus": "center center",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoUABAAPxl0slCspqSisAgBkCMJbACdMoR3ABKZBT4qC0ZJ3AD+3t3Wu25yUEp/enVjMAXm59OGF1QR4Oe5/dsr8AHBURe0iVRMOAd2zEfr7UvnZ9Ns4AIapFUpiMsThxjO2tS43Vd3SAGcIAw8RGX/kDAeKhkbVeAAAA=="
+  },
+  "greens": {
+    "base": "food/greens",
+    "widths": [
+      480,
+      768,
+      1100,
+      1500
+    ],
+    "width": 2832,
+    "height": 4240,
+    "ratio": 0.6679,
+    "alt": "Charred asparagus and broccolini piled over a smoky red sauce in a wide white bowl, scattered with sliced sausage.",
+    "decorative": false,
+    "focus": "center 45%",
+    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASoUAB4APxl+sVQsqCQjKA1RkCMJQBbZCLrxEY8LkPjHE4xRvi7sXEMtpmS8AAD+2mCK44VQHIj1Xa8PTZceydEPyqtpgHc5b8SoPnKYp8M5vG/G7FOim1ZkNy2Nqy4f0DyjJltJYI16IN4NDdX8kHy6yXUvOwgB3vGItAlp8rYQ+Dvt4BoTdZ4cHNmP4yRF03EUCRgxTEPLeUv6rfmUAAAA"
+  },
+  "plated-main": {
+    "base": "food/plated-main",
+    "widths": [
+      480,
+      768,
+      1100,
+      1500
+    ],
+    "width": 4240,
+    "height": 2832,
+    "ratio": 1.4972,
+    "alt": "A plated main course in a shallow white bowl: braised meat in a dark glossy sauce alongside a ridged quenelle of potato purée, finished with small green leaves.",
+    "decorative": false,
+    "focus": "center 50%",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASoUAA0APxl2slEspySisAgBkCMJYwCdACP4gmRo7eds5dCCqoAA4f7/AsZc+i89bMKAXtbDOjibXDezw1QLBVNkeZtligUCgiW4hyS4eyUIxn5ycaAxkKaj+V3yAA=="
+  },
+  "plated-main-warm": {
+    "base": "food/plated-main-warm",
+    "widths": [
+      480,
+      768,
+      1100,
+      1500
+    ],
+    "width": 4240,
+    "height": 2832,
+    "ratio": 1.4972,
+    "alt": "Braised meat and piped potato purée in a dark sauce, photographed close in low warm light.",
+    "decorative": false,
+    "focus": "center 50%",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoUAA0APxl2sVCspySisAgBkCMJYwC06B9dki/FTPOTyVtSAAD9nB8wWxFlsoMJ0OXRcD+EWt8JVAC87Cqx3m5pp5e8QjSpZlCcYsoAmgOAOEaKuJ+9mkLPlasID1gSdPnC14AA"
+  },
+  "lamp-corner": {
+    "base": "details/lamp-corner",
+    "widths": [
+      480,
+      720
+    ],
+    "width": 720,
+    "height": 1280,
+    "ratio": 0.5625,
+    "alt": null,
+    "decorative": true,
+    "focus": "center 50%",
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAADQBgCdASoUACQAPxmCt1WsqCUjJWsxkCMJZgCdM1j71X9VXw6Huad/Nl2aghWU6L7HX6J7UmmcZU0tO6bYXwAA/ttabl54KIXLrg8O4J016JvAGY0jjnLvAV84fwaMhzFu52OKPv7RE15z1XGB3pcqEBeyyfHeQV36FtaOnPhEhbG+cNVWls5o+cmexbgihECioUL4lAy8FeRM/jWXpiRjk63qPI7E/W69fRpBvm+z5kWfirfhgFAHbV9sxKarLaIiILA0Dwv9p+Ou6QHKov9K3agF1zPR8P+MjQg9AAA="
+  },
+  "room-plants": {
+    "base": "details/room-plants",
+    "widths": [
+      480,
+      768,
+      1100
+    ],
+    "width": 1280,
+    "height": 720,
+    "ratio": 1.7778,
+    "alt": "The dining room in warm daylight: marble-topped café tables and bentwood chairs, indoor trees, and a backlit shelf of ceramics along the far wall beneath exposed ducting.",
+    "decorative": false,
+    "focus": "center 62%",
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoUAAsAPxl0slCspqSisAgBkCMJbACdMoADf1Iu9ZfmuQlrfCgA4cxQhrMA4ddN+RT+vhsM/JLmq6cC3Otj5Ige93m850aLxav2F9iNUKwUlE4gdIUiPUj4yeCQEmNM446fbrGJGef0Zc3xIAA="
+  },
+  "bar-wide": {
+    "base": "details/bar-wide",
+    "widths": [
+      480,
+      768,
+      1100
+    ],
+    "width": 1448,
+    "height": 1086,
+    "ratio": 1.3333,
+    "alt": null,
+    "decorative": true,
+    "focus": "center 55%",
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADwAwCdASoUAA8APxl0slEspqSisAgBkCMJYgCdMoACRb3DniZfI584AM1bwLLHQ3kkZjWYscOjClA5kvPKGyRry4xBfSffk+l43P5OBpi68AQqIdFKyler4LWegV8DqhFfuBoREk8QriEccu+GkD6X0hS6Yxiev7UHaJIQYq2nrrkPuxeAAA=="
+  },
+  "plated-dark": {
+    "base": "details/plated-dark",
+    "widths": [
+      480,
+      768,
+      1100
+    ],
+    "width": 2832,
+    "height": 4240,
+    "ratio": 0.6679,
+    "alt": null,
+    "decorative": true,
+    "focus": "center 50%",
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACQBQCdASoUAB4APxl+tlSsp6SjKAqpkCMJYgDCuUABYyx7cqHdE0XGNET88aSbrDvc+2OAAAD+y0bm55KuYAKq+pTzbK2YBKf5gVc8rbA3y3LXMx9ExbjxiYXD3RdvDBy3RZV1IiGQXtfAM6HzCATvLvvnEhOd1Y5WahrBZV7XtgGzFvYLKN3C1wexiQh16lETPgHHnF91dh0quEAlWHoV2qwcW6+E30KVWDpTY2AAAA=="
+  }
+}

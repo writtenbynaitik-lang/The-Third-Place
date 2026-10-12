@@ -1,0 +1,363 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Components
+   Every component reads the per-tone aliases (--surface/--fg/--accent) so a
+   single definition works on both the day and night halves of the page.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Layout primitives ───────────────────────────────────────────────────── */
+
+.shell {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.rail {
+  max-width: var(--measure);
+}
+
+.section {
+  position: relative;
+  background: var(--surface);
+  color: var(--fg);
+  padding-block: var(--s-9);
+}
+
+@media (min-width: 840px) {
+  .section {
+    padding-block: var(--s-10);
+  }
+}
+
+/* ── The mark ────────────────────────────────────────────────────────────── */
+
+.mark {
+  display: block;
+  width: auto;
+  color: var(--accent);
+  flex: none;
+}
+
+/* ── Section head: ||| LABEL |||  +  heading  +  lead ────────────────────── */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s-5);
+}
+
+/* The ||| dividers either side of the label, exactly as the printed menu
+   sets its section headings. Decorative, hidden from assistive tech. */
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  width: 15px;
+  height: 11px;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--mark-mask) center / contain no-repeat;
+  mask: var(--mark-mask) center / contain no-repeat;
+}
+
+:root {
+  --mark-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 122 56'%3E%3Crect width='6' height='56'/%3E%3Crect x='58' width='6' height='56'/%3E%3Crect x='116' width='6' height='56'/%3E%3C/svg%3E");
+}
+
+.lead {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--fg-2);
+  max-width: 48ch;
+  margin-top: var(--s-5);
+}
+
+/* The cap belongs on the heading, not the wrapper: `ch` resolves against the
+   element's own font, so a cap set here would be measured in body-text
+   characters and strangle a heading set three steps larger. */
+.section-head h2 {
+  max-width: 19ch;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: 48px;
+  padding: var(--s-3) var(--s-6);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-2);
+  white-space: nowrap;
+  transition: background-color var(--dur-1) var(--ease-sharp),
+    color var(--dur-1) var(--ease-sharp),
+    border-color var(--dur-1) var(--ease-sharp),
+    transform var(--dur-1) var(--ease-sharp);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--solid {
+  background: var(--vermilion);
+  color: #fff;
+}
+
+.btn--solid:hover {
+  background: var(--vermilion-lo);
+}
+
+.btn--line {
+  border-color: color-mix(in srgb, currentColor 40%, transparent);
+  color: var(--fg);
+}
+
+.btn--line:hover {
+  border-color: currentColor;
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-7);
+}
+
+/* ── Figures ─────────────────────────────────────────────────────────────── */
+
+.fig {
+  position: relative;
+  margin: 0;
+}
+
+/* The LQIP sits on the wrapper, so a failed <img> still leaves a filled,
+   correctly-sized slot rather than a broken icon or a collapsed box. */
+.fig__frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--surface-2);
+  background-image: var(--lqip);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-2);
+}
+
+/* The direct child is a <picture>, not the <img> — it needs to be told to
+   fill the frame before object-fit on the image means anything. */
+.fig__frame picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fig__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--focus, center);
+}
+
+.fig figcaption {
+  margin-top: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--fg-3);
+  max-width: 44ch;
+}
+
+/* Aspect helpers — each image also carries width/height so space is reserved
+   even before CSS applies. */
+.ar-4x5 { aspect-ratio: 4 / 5; }
+.ar-1x1 { aspect-ratio: 1 / 1; }
+.ar-3x2 { aspect-ratio: 3 / 2; }
+.ar-16x9 { aspect-ratio: 16 / 9; }
+.ar-9x16 { aspect-ratio: 9 / 16; }
+
+/* ── Rules ───────────────────────────────────────────────────────────────── */
+
+.rule {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+}
+
+/* ── Menu list ───────────────────────────────────────────────────────────── */
+
+.menu-list {
+  display: grid;
+  gap: 0;
+}
+
+.menu-item {
+  display: grid;
+  gap: var(--s-1);
+  padding-block: var(--s-5);
+  border-top: 1px solid var(--rule);
+}
+
+.menu-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.menu-item__name {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--fg);
+}
+
+.menu-item__desc {
+  font-size: var(--step-0);
+  line-height: 1.5;
+  color: var(--fg-2);
+  max-width: 52ch;
+}
+
+/* Allergen / non-veg marks, reproducing the printed menu's own key. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-1);
+  padding: 1px var(--s-2);
+  white-space: nowrap;
+}
+
+.tag--nonveg {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.tag--nonveg::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+}
+
+/* ── Category switcher ───────────────────────────────────────────────────── */
+
+.cats {
+  display: flex;
+  gap: var(--s-2);
+  overflow-x: auto;
+  /* Required. WebKit does not collapse a flex scroll container's automatic
+     minimum size, so without this the chip row sets a 637px floor and drags
+     horizontal scroll onto the whole page at phone widths. */
+  min-width: 0;
+  scrollbar-width: none;
+  padding-bottom: var(--s-2);
+  margin-bottom: var(--s-6);
+  /* Fade the scroll edge on mobile rather than showing a cut-off chip. */
+  -webkit-mask: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  mask: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+}
+
+.cats::-webkit-scrollbar {
+  display: none;
+}
+
+.cat {
+  flex: none;
+  min-height: 44px;
+  padding: var(--s-2) var(--s-5);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  transition: color var(--dur-1) var(--ease-sharp),
+    border-color var(--dur-1) var(--ease-sharp),
+    background-color var(--dur-1) var(--ease-sharp);
+}
+
+.cat:hover {
+  color: var(--fg);
+  border-color: color-mix(in srgb, var(--fg) 35%, transparent);
+}
+
+.cat[aria-selected='true'] {
+  color: #fff;
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+}
+
+@media (min-width: 840px) {
+  .cats {
+    flex-wrap: wrap;
+    overflow: visible;
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
+/* ── Mobile action bar ───────────────────────────────────────────────────────
+   On a phone, Call and Book are the only two actions that matter, so after the
+   hero scrolls away they become permanently reachable. Hidden ≥840px.        */
+
+.actionbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  padding-bottom: max(var(--s-3), env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--paper-deep);
+  transform: translateY(110%);
+  transition: transform var(--dur-2) var(--ease-out);
+}
+
+.actionbar[data-shown='true'] {
+  transform: translateY(0);
+}
+
+.actionbar .btn {
+  min-height: 46px;
+  padding-inline: var(--s-4);
+  font-size: 0.78rem;
+}
+
+@media (min-width: 840px) {
+  .actionbar {
+    display: none;
+  }
+}
